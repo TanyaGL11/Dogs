@@ -17,8 +17,8 @@ const App = () => {
   const [api, setApi] = useState(new Api(token))
   const [goods, setGoods] = useState([])
   useEffect(() => {
-    console.log("Hello!")
-    console.log(token)
+    // console("Hello!")
+    // console.log(token)
     if (token) {
         // загрузить данные с сервера
         api.getProducts()
@@ -29,7 +29,7 @@ const App = () => {
  }, []) 
 
   useEffect(() => {
-    console.log("Change token")
+    // console.log("Change token")
     setApi(new Api(token))
     setUser(localStorage.getItem("user8"))
   }, [token])

@@ -1,4 +1,5 @@
 import React from "react"
+import { Button } from "../Button/Button"
 import "./index.css"
 
 export const Card = ({text, like}) =>{
@@ -13,14 +14,14 @@ export const Card = ({text, like}) =>{
         <img src={text.pictures} alt={text.description} className="image" />
         <div className="desc">
           {text.discount > 0 && (
-            <span className="old_price price_type_discount">
+            <span className="old_price price_discount">
               { text.price }
               {' '}
               P
             </span>
           )}
           <div>
-            <span className={text.discount > 0 ? "price price_type_discount" : "price"}>
+            <span className={text.discount > 0 ? "price price_discount" : "price"}>
               { discountPrice }
               {' '}
               P
@@ -33,6 +34,7 @@ export const Card = ({text, like}) =>{
          {/* { text.description }*/}
         </div>
       </a> 
+      <Button text="В корзину" type="primary" />
     </div>
     <span className="card_heart">
       { like 

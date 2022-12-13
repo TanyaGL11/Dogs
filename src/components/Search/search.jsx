@@ -4,12 +4,17 @@ import {ReactComponent  as CloseImg} from "./img/circle-xmark-regular.svg"
 import "./search.css"
 
 export const Search =({data}) => {
+  let dataName = data.map((data,key) => {
+    key=data.id
+    return (
+    data = data.name )})
+  
   // eslint-disable-next-line no-unused-vars
   const [text, updateText] = useState("")
   const [searchData, setSerchData] = useState(data.filter(el => el.name.toLowerCase().includes(text.toLowerCase())))
   const clearSearch = () => {
     updateText("")
-    setSerchData(data)
+    setSerchData(dataName)
   }
   const search = (e) => {
     updateText(e.target.value)
