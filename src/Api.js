@@ -23,6 +23,23 @@ class Api {
             body: JSON.stringify(body)
          })
     }
+    getMeUser() {
+        return fetch(`${this.path}/v2/${this.group}/users/me`, {
+            headers: {
+                "authorization": `Bearer ${this.token}`
+            }
+        })
+    }
+    updataUserInfo(updateUser) {
+        return fetch(`${this.path}/v2/${this.group}/users/me`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${this.token}`
+            },
+            body: JSON.stringify(updateUser)
+        })
+    }
     getProducts() {
         return fetch(`${this.path}/products`, {
             headers: {

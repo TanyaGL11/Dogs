@@ -11,6 +11,13 @@
   border: gray;
 }
 
+.btn:hover {
+  border-color: #feba0c;
+  color: #feba0c;
+  background-color: #f44336;
+}
+
+
 .primary {
   border-color: #fed700;
 }
@@ -24,11 +31,3 @@
   border-color: #feba0c;
   color: #f44336;
 }
-
-/*
-
-.btn:hover {
-  border-color: #feba0c;
-  color: #feba0c;
-  background-color: #f44336;
-}*/

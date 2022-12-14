@@ -26,3 +26,17 @@ header {
   gap: 1em;
 
 }
+.me_user{
+  width: 300px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 0 #0006, 0 0 8px 2px, #0004;
+  display: grid;
+  gap: 20px;
+  position: relative;
+ 
+}
+p {
+  color: black;
+}

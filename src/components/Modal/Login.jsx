@@ -18,11 +18,12 @@ export const Login = ({change, api, close, setToken}) => {
                 localStorage.setItem("user8", data.data.name)
                 localStorage.setItem("token8", data.token)
                 setToken(data.token)
-                console.log(data)
+                //console.log(data)
                 setInp1("")
                 setInp2("")
                 close(false)
             })
+            .catch((err)=>console.error.log(err))
   }
   return (
     <form onSubmit={sendForm}>

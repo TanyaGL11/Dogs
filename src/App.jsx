@@ -7,6 +7,8 @@ import { Home } from "./pages/Home"
 import { Catalog } from "./pages/Catalog"
 import { Modal } from "./components/Modal"
 import { Api } from "./Api"
+import { onUpdated } from "vue"
+
 
 const smiles = ["^_^", "=)", "O_o", ";(", "^_O", "@_@", "-_-"]
 
@@ -16,6 +18,10 @@ const App = () => {
   const [modalActive, setModalActive]=useState(false)
   const [api, setApi] = useState(new Api(token))
   const [goods, setGoods] = useState([])
+  
+  const handleUpdateUser = (updateUser) => {
+    api.updataUserInfo(updateUser).then((newUser)=> setUser(newUser))
+ }
   useEffect(() => {
     // console("Hello!")
     // console.log(token)
@@ -57,13 +63,15 @@ const App = () => {
         setUser={setUser} 
         products={products} 
         setModalActive={setModalActive}
-      />
-      <main>
+        handleUpdateUser = {handleUpdateUser}
+        />
+        <main>
         {user ? <Catalog data={goods} /> : <Home data={smiles} />}
       </main>
       <Footer />
      </div>
      <Modal isActive={modalActive} setState={setModalActive} api ={api} setToken={setToken}/>
+     
     </> 
   )
 }

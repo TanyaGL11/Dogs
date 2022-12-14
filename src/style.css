@@ -24,6 +24,11 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 2em;
 }
+.icon{
+  height: 100px;
+  color: black;
+  background-color: aliceblue;
+}
 
 @media (max-width: 1260px) {
   .container>* {
